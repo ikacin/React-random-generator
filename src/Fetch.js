@@ -1,8 +1,6 @@
 import {useEffect, useState} from "react";
 import Template from "./Template";
-
-
-
+import {click} from "@testing-library/user-event/dist/click";
 
  function GetFetch () {
     const[proxyUrl,setProxyUrl] = useState( 'https://whispering-tor-04671.herokuapp.com/');
@@ -10,11 +8,8 @@ import Template from "./Template";
     const[list,setList] = useState([]);
     const[longText,setLongText] = useState("")
     const[info,setInfo] = useState([])
-    const [install,setInstall] = useState();
-
 
     try {
-
         fetch(proxyUrl+apiUrl)
             .then((response) => response.json())
             .then(data => {
@@ -30,8 +25,6 @@ import Template from "./Template";
                 }
                 setInfo(data.quoteText)
             })
-
-
     }catch (error){
         GetFetch ()
     }
@@ -42,14 +35,12 @@ import Template from "./Template";
     }
 
     const newQuoteBtn = () => {
-
-        GetFetch ()
+        setInfo(click.list)
     }
 
     return(
         <Template longDesc = {longText} indexes = {list} details = {info}  easing = {() => newQuoteBtn()} twitter = {() => tweetQuote()}/>
     )
-
 }
 
 

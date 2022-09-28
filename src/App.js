@@ -4,17 +4,11 @@ import Template from "./Template";
 import {useState} from "react";
 import Fetch from "./Fetch";
 
-
-
 function App() {
-
-
   return (
     <div className="App">
         <Template/>
         <Fetch/>
-
-
     </div>
   );
 }
