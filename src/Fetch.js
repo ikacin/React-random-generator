@@ -39,7 +39,7 @@ import {click} from "@testing-library/user-event/dist/click";
     }
 
     return(
-        <Template longDesc = {longText} indexes = {list} details = {info}  easing = {() => newQuoteBtn()} twitter = {() => tweetQuote()}/>
+        <Template longDesc = {longText} indexes = {list} details = {info}  easing = {() => newQuoteBtn()} twitter = {() => tweetQuote()} />
     )
 }
 

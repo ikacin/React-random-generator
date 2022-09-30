@@ -4,12 +4,17 @@ import * as React from 'react';
 import Icon from '@mui/material/Icon';
 import TwitterIcon from '@mui/icons-material/Twitter';
 
+
+import "./custom.css"
+
+
+
 const Template = (props) => {
-    const[addLoader,setAddLoader] = useState(false);
+    const[addLoader,setAddLoader] = useState("loader");
 
     return(
        <>
-            <div className={`quote-container ${addLoader === false ? "add" : "hidden"}`} id={"quote-container"}>
+            <div className={`quote-container ${addLoader === false ? "hidden" : "add"}`} id={"quote-container"}>
                 <div className={"quote-text"}>
                     <img src={mainLogo}/>
                     <span id={"quote"}>{props.details}</span>
@@ -28,7 +33,7 @@ const Template = (props) => {
                 </div>
 
             </div>
-        <div className={`loader ${addLoader === false ? "hidden" : "add"}`} id={"loader"}></div>
+        <div className={`loader ${addLoader === false ? "add" : "hidden"}`} id={"loader"}></div>
 
        </>
     )
